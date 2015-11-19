@@ -15,6 +15,8 @@
 		28DA47AB1BFC1F0800937E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DA47A91BFC1F0800937E35 /* LaunchScreen.storyboard */; };
 		28DA47B61BFC1F0800937E35 /* TPArchiverExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA47B51BFC1F0800937E35 /* TPArchiverExampleTests.m */; };
 		28DA47C11BFC1F0800937E35 /* TPArchiverExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA47C01BFC1F0800937E35 /* TPArchiverExampleUITests.m */; };
+		28DA47D01BFC1FEE00937E35 /* TPTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA47CF1BFC1FEE00937E35 /* TPTestModel.m */; };
+		28DA47D41BFC3BDE00937E35 /* TPArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA47D31BFC3BDE00937E35 /* TPArchiver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		28DA47BC1BFC1F0800937E35 /* TPArchiverExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPArchiverExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DA47C01BFC1F0800937E35 /* TPArchiverExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPArchiverExampleUITests.m; sourceTree = "<group>"; };
 		28DA47C21BFC1F0800937E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28DA47CE1BFC1FEE00937E35 /* TPTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTestModel.h; sourceTree = "<group>"; };
+		28DA47CF1BFC1FEE00937E35 /* TPTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTestModel.m; sourceTree = "<group>"; };
+		28DA47D21BFC3BDE00937E35 /* TPArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPArchiver.h; sourceTree = "<group>"; };
+		28DA47D31BFC3BDE00937E35 /* TPArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPArchiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		28DA478F1BFC1F0800937E35 = {
 			isa = PBXGroup;
 			children = (
+				28DA47D11BFC3BC200937E35 /* TPArchiver */,
 				28DA479A1BFC1F0800937E35 /* TPArchiverExample */,
 				28DA47B41BFC1F0800937E35 /* TPArchiverExampleTests */,
 				28DA47BF1BFC1F0800937E35 /* TPArchiverExampleUITests */,
@@ -105,6 +112,8 @@
 				28DA479F1BFC1F0800937E35 /* AppDelegate.m */,
 				28DA47A11BFC1F0800937E35 /* ViewController.h */,
 				28DA47A21BFC1F0800937E35 /* ViewController.m */,
+				28DA47CE1BFC1FEE00937E35 /* TPTestModel.h */,
+				28DA47CF1BFC1FEE00937E35 /* TPTestModel.m */,
 				28DA47A41BFC1F0800937E35 /* Main.storyboard */,
 				28DA47A71BFC1F0800937E35 /* Assets.xcassets */,
 				28DA47A91BFC1F0800937E35 /* LaunchScreen.storyboard */,
@@ -138,6 +147,15 @@
 				28DA47C21BFC1F0800937E35 /* Info.plist */,
 			);
 			path = TPArchiverExampleUITests;
+			sourceTree = "<group>";
+		};
+		28DA47D11BFC3BC200937E35 /* TPArchiver */ = {
+			isa = PBXGroup;
+			children = (
+				28DA47D21BFC3BDE00937E35 /* TPArchiver.h */,
+				28DA47D31BFC3BDE00937E35 /* TPArchiver.m */,
+			);
+			path = TPArchiver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DA47D41BFC3BDE00937E35 /* TPArchiver.m in Sources */,
 				28DA47A31BFC1F0800937E35 /* ViewController.m in Sources */,
+				28DA47D01BFC1FEE00937E35 /* TPTestModel.m in Sources */,
 				28DA47A01BFC1F0800937E35 /* AppDelegate.m in Sources */,
 				28DA479D1BFC1F0800937E35 /* main.m in Sources */,
 			);
