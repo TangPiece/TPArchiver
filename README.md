@@ -3,7 +3,7 @@ just one step for your custom classes can archiver !
 
 只需要一步，即可让自定义的类具有归档功能！
 
-    //在需要归档或解档的前面调用此方法，即可让自定义的类实现归档、解档功能 !!!!!!!!!!!!!!!!
+    //在需要归档或解档的前面调用此方法，即可让自定义的类具有归档、解档功能 !!!!!!!!!!!!!!!!
     [TPArchiver archiverWithAllArchiverClasses:@[[CustomClassFirst class] , [CustomClassSecond class] , ...];
 
 提醒
