@@ -33,14 +33,9 @@
  *  @param aCoder 归档参数
  */
 void encoderWithCoder(id obj , SEL _cmd , NSCoder *aCoder){
-    //    TPLog(@"self:%@" , obj);
-    //    TPLog(@"m:%@" , NSStringFromSelector(_cmd));
     NSArray *propertyNames = [TPArchiver getAllPropertyNamesWithClass:[obj class]];
     for (NSString *name in propertyNames) {
-        SEL sel = NSSelectorFromString(name);
-        //利用反射机制执行getter方法
         [aCoder encodeObject:[obj valueForKey:name] forKey:name];
-        //        [aCoder encodeObject:[obj performSelector:sel] forKey:name];
     }
 }
 
@@ -52,21 +47,11 @@ void encoderWithCoder(id obj , SEL _cmd , NSCoder *aCoder){
  *  @param aDecoder 解档参数
  */
 id initWithCoder(id obj , SEL _cmd , NSCoder *aDecoder) {
-    //    TPLog(@"self:%@" , obj);
-    //    TPLog(@"m:%@" , NSStringFromSelector(_cmd));
     NSArray *propertyNames = [TPArchiver getAllPropertyNamesWithClass:[obj class]];
     obj = [obj init];
     for (NSString *name in propertyNames) {
-#warning 不能用KVC ？？？？？？？？？？？？？？
-        //利用KVC执行setter方法
-        //哪个大神知道原因，欢迎issue我^_^
-//        [obj setValue:[aDecoder decodeObjectForKey:name] forKey:name];
         id value = [aDecoder decodeObjectForKey:name];
-        NSString *firstLetter = [[name substringToIndex:1] uppercaseString];
-        NSString *capitalName = [name stringByReplacingCharactersInRange:NSMakeRange(0 , 1) withString:firstLetter];
-        NSString *setName = [NSString stringWithFormat:@"set%@:" , capitalName];
-        SEL setSel = NSSelectorFromString(setName);
-        [obj performSelector:setSel withObject:value];
+        [obj setValue:value forKey:name];
     }
     return obj;
 }

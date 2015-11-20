@@ -34,8 +34,9 @@
     TPTestModel *testModel = [[TPTestModel alloc] init];
     testModel.title = @"一步让自定义的类实现归档、解档";
     testModel.overView = @"\n 导入TPArchiver到工程中\n #import头文件TPARchiver.h\n 调用类方法archiverWithAllArchiverClasses: ，参数为需要进行归档解档类的class数组\n 调用该方法后，即可对自定的类使用NSKeyedArchiver 、NSKeyedUnarchiver进行归档、解档操作";
-    testModel.time = @"2015-11-18";
+    testModel.time = 20151118;
     testModel.author = @"TangPiece";
+    testModel.success = YES;
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"归档" message:@"提示信息" preferredStyle:UIAlertControllerStyleAlert];
     //NSKeyedArchiver归档
@@ -44,8 +45,9 @@
         TPTestModel *tempTestModel = [[TPTestModel alloc] init];
         tempTestModel.title = @"归档成功";
         tempTestModel.overView = @"解档即可显示归档的信息，可以按照控制台打印出的绝对路径查看生成的文件";
-        tempTestModel.time = @"2015-11-18";
-        tempTestModel.author = @"TangPiece";
+        tempTestModel.time = 0;
+        tempTestModel.author = @" ";
+        tempTestModel.success = YES;
         [self showContentWithTestModel:tempTestModel];
         alertController.title = @"归档成功";
         alertController.message = @"解档即可显示归档的信息，可以按照控制台打印出的绝对路径查看生成的文件";
@@ -155,7 +157,7 @@
     }
     self.titleLabel.text = [@"标题：" stringByAppendingString:testModel.title];
     self.overViewLabel.text = [@"概述：" stringByAppendingString:testModel.overView];
-    self.timeLabel.text = [@"时间：" stringByAppendingString:testModel.time];
+    self.timeLabel.text = [NSString stringWithFormat:@"时间：%ld sucess:%d" , testModel.time , testModel.success];
     self.authorLabel.text = [@"作者：" stringByAppendingString:testModel.author];
 }
 

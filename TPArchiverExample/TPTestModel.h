@@ -11,6 +11,7 @@
 @interface TPTestModel : NSObject
 @property (nonatomic , copy) NSString *title;
 @property (nonatomic , copy) NSString *overView;
-@property (nonatomic , copy) NSString *time;
 @property (nonatomic , copy) NSString *author;
+@property (nonatomic , assign) NSInteger time;
+@property (nonatomic , assign) BOOL success;
 @end
