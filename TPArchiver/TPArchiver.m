@@ -32,7 +32,7 @@
  *  @param _cmd   归档方法名
  *  @param aCoder 归档参数
  */
-void encoderWithCoder(id obj , SEL _cmd , NSCoder *aCoder){
+void tp_encoderWithCoder(id obj , SEL _cmd , NSCoder *aCoder){
     NSArray *propertyNames = [TPArchiver getAllPropertyNamesWithClass:[obj class]];
     for (NSString *name in propertyNames) {
         [aCoder encodeObject:[obj valueForKey:name] forKey:name];
@@ -46,7 +46,7 @@ void encoderWithCoder(id obj , SEL _cmd , NSCoder *aCoder){
  *  @param _cmd   解档方法名
  *  @param aDecoder 解档参数
  */
-id initWithCoder(id obj , SEL _cmd , NSCoder *aDecoder) {
+id tp_initWithCoder(id obj , SEL _cmd , NSCoder *aDecoder) {
     NSArray *propertyNames = [TPArchiver getAllPropertyNamesWithClass:[obj class]];
     obj = [obj init];
     for (NSString *name in propertyNames) {
@@ -83,13 +83,13 @@ id initWithCoder(id obj , SEL _cmd , NSCoder *aDecoder) {
         //用runtime给传入的需要归档的类添加归档功能encodeWithCoder:
         class_addMethod(encoderClass ,
                         @selector(encodeWithCoder:),
-                        (IMP)encoderWithCoder ,
+                        (IMP)tp_encoderWithCoder ,
                         "v@:@");
         
         //用runtime给传入的需要解档的类添加归档功能initWithCoder:
         class_addMethod(encoderClass ,
                         @selector(initWithCoder:),
-                        (IMP)initWithCoder,
+                        (IMP)tp_initWithCoder,
                         "@@:@");
     }
 }
